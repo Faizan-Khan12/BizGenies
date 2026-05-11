@@ -1,6 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { Moon, Phone, Sun } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 const NAV_LINKS = [
@@ -43,6 +44,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [theme, setTheme] = useState<'light' | 'dark'>('dark');
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -51,11 +53,22 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    setTheme(currentTheme === 'light' ? 'light' : 'dark');
+  }, []);
+
+  useEffect(() => {
     setMobileOpen(false);
     setServicesOpen(false);
   }, [pathname]);
 
   const isActive = (href: string) => pathname === href;
+  const toggleTheme = () => {
+    const nextTheme = theme === 'light' ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', nextTheme);
+    localStorage.setItem('theme', nextTheme);
+    setTheme(nextTheme);
+  };
 
   return (
     <>
@@ -68,15 +81,21 @@ export default function Navbar() {
           zIndex: 50,
           transition: 'all .3s',
           padding: scrolled ? '1rem 0' : '1.5rem 0',
-          background: scrolled ? 'rgba(14,14,14,.92)' : 'transparent',
+          background: scrolled ? 'var(--nav-bg)' : 'transparent',
           backdropFilter: scrolled ? 'blur(12px)' : 'none',
-          borderBottom: scrolled ? '1px solid var(--border)' : 'none',
+          borderBottom: scrolled ? '1px solid var(--nav-border)' : 'none',
         }}
       >
         <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
           {/* Logo */}
-          <Link href="/">
-            <span className="biz-genies-logo biz-genies-logo--sm" aria-label="Biz Genies" />
+          <Link href="/" className="brand-logo-link" aria-label="Biz Genies home">
+            <img
+              src="/biz-genies-logo.png"
+              alt="Biz Genies"
+              className="brand-logo brand-logo--nav"
+              width={178}
+              height={89}
+            />
           </Link>
 
           {/* Desktop nav */}
@@ -113,7 +132,7 @@ export default function Navbar() {
                         background: 'var(--surface-2)',
                         border: '1px solid var(--border)',
                         borderRadius: '12px',
-                        boxShadow: '0 24px 64px rgba(0,0,0,.5)',
+                        boxShadow: 'var(--shadow-strong)',
                         padding: '2rem',
                         display: 'grid',
                         gridTemplateColumns: 'repeat(3, 1fr)',
@@ -157,8 +176,17 @@ export default function Navbar() {
           {/* Desktop CTA */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }} className="desktop-nav">
             <a href="#" style={{ display: 'flex', alignItems: 'center', gap: '.5rem', fontSize: '.875rem', fontWeight: 500, color: 'var(--text)', transition: 'color .2s' }}>
-              📞 (305) 600-5727
+              <Phone size={15} /> (305) 600-5727
             </a>
+            <button
+              type="button"
+              onClick={toggleTheme}
+              className="theme-toggle"
+              aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+              title={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+            >
+              {theme === 'light' ? <Moon size={16} /> : <Sun size={16} />}
+            </button>
             <Link href="/contact" className="btn btn-primary" style={{ padding: '.65rem 1.5rem', fontSize: '.875rem' }}>
               Book a Call
             </Link>
@@ -183,7 +211,13 @@ export default function Navbar() {
         <div style={{ position: 'fixed', inset: 0, zIndex: 60, background: 'var(--bg)', display: 'flex', flexDirection: 'column' }}>
           <div style={{ padding: '1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderBottom: '1px solid var(--border)' }}>
             <Link href="/" onClick={() => setMobileOpen(false)}>
-              <span className="biz-genies-logo biz-genies-logo--sm" />
+              <img
+                src="/biz-genies-logo.png"
+                alt="Biz Genies"
+                className="brand-logo brand-logo--nav"
+                width={178}
+                height={89}
+              />
             </Link>
             <button onClick={() => setMobileOpen(false)} style={{ padding: '.5rem', color: 'var(--text)' }} aria-label="Close menu">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
@@ -196,7 +230,16 @@ export default function Navbar() {
               <Link key={href} href={href} onClick={() => setMobileOpen(false)} style={{ fontSize: '1.75rem', fontFamily: 'Space Grotesk, sans-serif', fontWeight: 700, color: 'var(--text)' }}>{label}</Link>
             ))}
             <div style={{ marginTop: '2rem', paddingTop: '2rem', borderTop: '1px solid var(--border)', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-              <a href="#" style={{ fontSize: '1.25rem', color: 'var(--text)' }}>📞 (305) 600-5727</a>
+              <a href="#" style={{ display: 'flex', alignItems: 'center', gap: '.75rem', fontSize: '1.25rem', color: 'var(--text)' }}><Phone size={20} /> (305) 600-5727</a>
+              <button
+                type="button"
+                onClick={toggleTheme}
+                className="theme-toggle theme-toggle--mobile"
+                aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+              >
+                {theme === 'light' ? <Moon size={18} /> : <Sun size={18} />}
+                <span>{theme === 'light' ? 'Dark mode' : 'Light mode'}</span>
+              </button>
               <Link href="/contact" onClick={() => setMobileOpen(false)} className="btn btn-primary" style={{ textAlign: 'center', fontSize: '1.1rem', padding: '1.1rem 2rem' }}>
                 Book a Free Strategy Call
               </Link>

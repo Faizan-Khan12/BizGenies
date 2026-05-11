@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { Mail, Phone } from 'lucide-react';
 
 const QUICK_LINKS = [
   { label: 'Our Work', href: '/our-work' },
@@ -16,15 +17,21 @@ export default function Footer() {
         <div className="grid-2" style={{ marginBottom: '4rem' }}>
           {/* Branding col */}
           <div>
-            <Link href="/" style={{ display: 'inline-block', marginBottom: '1.5rem' }}>
-              <span className="biz-genies-logo biz-genies-logo--lg" />
+            <Link href="/" style={{ display: 'inline-block', marginBottom: '1.5rem' }} aria-label="Biz Genies home">
+              <img
+                src="/biz-genies-logo.png"
+                alt="Biz Genies"
+                className="brand-logo brand-logo--footer"
+                width={240}
+                height={120}
+              />
             </Link>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginBottom: '2rem' }}>
               <a href="#" style={{ display: 'flex', alignItems: 'center', gap: '.75rem', color: 'var(--text)', transition: 'color .2s' }}>
-                <span style={{ color: 'var(--accent)' }}>📞</span> (305) 600-5727
+                <Phone size={18} style={{ color: 'var(--accent)' }} /> (305) 600-5727
               </a>
               <a href="mailto:hello@bizgenies.com" style={{ display: 'flex', alignItems: 'center', gap: '.75rem', color: 'var(--text)', transition: 'color .2s' }}>
-                <span style={{ color: 'var(--accent)' }}>✉️</span> hello@bizgenies.com
+                <Mail size={18} style={{ color: 'var(--accent)' }} /> hello@bizgenies.com
               </a>
             </div>
             <div style={{ display: 'flex', gap: '1rem' }}>

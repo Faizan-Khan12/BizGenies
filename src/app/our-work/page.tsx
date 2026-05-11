@@ -37,7 +37,7 @@ export default function OurWorkPage() {
               <button
                 key={f}
                 onClick={() => setFilter(f)}
-                style={{ padding: '.5rem 1.25rem', borderRadius: '999px', fontSize: '.875rem', fontWeight: 500, transition: 'all .2s', background: filter === f ? 'var(--accent)' : 'var(--surface)', color: filter === f ? '#fff' : 'var(--muted)', border: filter === f ? '1px solid var(--accent)' : '1px solid var(--border)', cursor: 'pointer' }}
+                style={{ padding: '.5rem 1.25rem', borderRadius: '999px', fontSize: '.875rem', fontWeight: 500, transition: 'all .2s', background: filter === f ? 'var(--accent)' : 'var(--surface)', color: filter === f ? 'var(--on-accent)' : 'var(--muted)', border: filter === f ? '1px solid var(--accent)' : '1px solid var(--border)', cursor: 'pointer' }}
               >
                 {f}
               </button>
@@ -52,12 +52,12 @@ export default function OurWorkPage() {
                 style={{ position: 'relative', overflow: 'hidden', borderRadius: '12px', background: 'linear-gradient(135deg, var(--surface), var(--surface-2))', border: '1px solid var(--border)', aspectRatio: p.size === 'large' ? '16/9' : '1', gridColumn: p.size === 'large' ? 'span 2' : 'span 1', cursor: 'pointer' }}
                 className="work-card"
               >
-                <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,.3)', opacity: 0, transition: 'opacity .3s, background .3s', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', zIndex: 2 }} className="work-card-overlay">
-                  <span style={{ color: '#fff', fontWeight: 700, fontSize: '1.1rem' }}>{p.name}</span>
-                  <span style={{ color: 'rgba(255,255,255,.8)', fontSize: '.875rem', marginTop: '.25rem' }}>View Live Site →</span>
+                <div style={{ position: 'absolute', inset: 0, background: 'var(--overlay-bg)', opacity: 0, transition: 'opacity .3s, background .3s', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', zIndex: 2 }} className="work-card-overlay">
+                  <span style={{ color: 'var(--on-accent)', fontWeight: 700, fontSize: '1.1rem' }}>{p.name}</span>
+                  <span style={{ color: 'var(--overlay-muted)', fontSize: '.875rem', marginTop: '.25rem' }}>View Live Site →</span>
                 </div>
                 <div style={{ position: 'absolute', bottom: '1rem', left: '1rem', zIndex: 3 }}>
-                  <span style={{ background: 'rgba(14,14,14,.8)', backdropFilter: 'blur(8px)', border: '1px solid rgba(255,255,255,.15)', borderRadius: '6px', padding: '.3rem .75rem', fontSize: '.8rem', fontWeight: 500, color: '#fff' }}>{p.category}</span>
+                  <span style={{ background: 'var(--nav-bg)', backdropFilter: 'blur(8px)', border: '1px solid var(--nav-border)', borderRadius: '6px', padding: '.3rem .75rem', fontSize: '.8rem', fontWeight: 500, color: 'var(--text)' }}>{p.category}</span>
                 </div>
               </div>
             ))}
@@ -65,8 +65,8 @@ export default function OurWorkPage() {
 
           {/* Bottom CTA */}
           <div style={{ background: 'var(--surface-2)', border: '1px solid var(--border)', borderRadius: '16px', padding: '4rem', textAlign: 'center' }}>
-            <div style={{ display: 'inline-block', padding: '.4rem 1rem', borderRadius: '999px', background: 'rgba(255,107,53,.1)', border: '1px solid rgba(255,107,53,.2)', marginBottom: '1.5rem' }}>
-              <span style={{ fontFamily: 'Space Mono, monospace', color: 'var(--accent)', fontSize: '.8rem', fontWeight: 700 }}>200+ SITES BUILT</span>
+            <div style={{ display: 'inline-block', padding: '.4rem 1rem', borderRadius: '999px', background: 'var(--badge-bg)', border: '1px solid var(--badge-border)', marginBottom: '1.5rem' }}>
+              <span style={{ fontFamily: 'Space Mono, monospace', color: 'var(--badge-text)', fontSize: '.8rem', fontWeight: 700 }}>200+ SITES BUILT</span>
             </div>
             <h2 style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.5rem)', color: 'var(--text)', marginBottom: '1.5rem' }}>Ready for your own high-converting site?</h2>
             <a href="/contact" className="btn btn-primary" style={{ fontSize: '1.05rem', padding: '1rem 2rem' }}>Book a Strategy Call →</a>
@@ -75,7 +75,7 @@ export default function OurWorkPage() {
       </div>
 
       <style>{`
-        .work-card:hover .work-card-overlay { opacity: 1 !important; background: rgba(255,107,53,.88) !important; }
+        .work-card:hover .work-card-overlay { opacity: 1 !important; background: var(--overlay-bg) !important; }
         @media (max-width: 1023px) { .work-card[style*="span 2"] { grid-column: span 1 !important; aspect-ratio: 16/9 !important; } }
       `}</style>
     </SiteLayout>

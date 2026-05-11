@@ -41,16 +41,16 @@ export default function PricingPage() {
                   position: 'relative',
                   background: 'var(--surface)',
                   borderRadius: '16px',
-                  border: tier.popular ? '2px solid var(--accent)' : '1px solid var(--border)',
+                  border: tier.popular ? '2px solid var(--accent-2)' : '1px solid var(--border)',
                   padding: '2.5rem 2rem',
                   display: 'flex',
                   flexDirection: 'column',
-                  boxShadow: tier.popular ? '0 0 60px rgba(255,107,53,.2)' : 'none',
+                  boxShadow: tier.popular ? 'var(--glow)' : 'var(--shadow-soft)',
                   transform: tier.popular ? 'scale(1.05)' : 'none',
                 }}
               >
                 {tier.popular && (
-                  <div style={{ position: 'absolute', top: 0, left: '50%', transform: 'translate(-50%, -50%)', background: 'var(--accent)', color: '#fff', padding: '.3rem 1rem', borderRadius: '999px', fontSize: '.75rem', fontWeight: 700, letterSpacing: '.08em', textTransform: 'uppercase', whiteSpace: 'nowrap' }}>
+                  <div style={{ position: 'absolute', top: 0, left: '50%', transform: 'translate(-50%, -50%)', background: 'var(--accent-2)', color: 'var(--on-accent)', padding: '.3rem 1rem', borderRadius: '999px', fontSize: '.75rem', fontWeight: 700, letterSpacing: '.08em', textTransform: 'uppercase', whiteSpace: 'nowrap' }}>
                     Most Popular
                   </div>
                 )}
@@ -65,7 +65,7 @@ export default function PricingPage() {
                 <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '1rem', marginBottom: '2rem', flex: 1 }}>
                   {tier.features.map((f) => (
                     <li key={f} style={{ display: 'flex', alignItems: 'flex-start', gap: '.75rem', fontSize: '.875rem', color: 'var(--text)' }}>
-                      <span style={{ color: 'var(--accent)', flexShrink: 0, marginTop: '.1rem' }}>✓</span> {f}
+                      <span style={{ color: 'var(--accent-2)', flexShrink: 0, marginTop: '.1rem' }}>✓</span> {f}
                     </li>
                   ))}
                 </ul>
@@ -80,7 +80,7 @@ export default function PricingPage() {
                     fontSize: '1rem',
                     transition: 'all .2s',
                     background: tier.popular ? 'var(--accent)' : 'var(--surface-2)',
-                    color: tier.popular ? '#fff' : 'var(--text)',
+                    color: tier.popular ? 'var(--on-accent)' : 'var(--text)',
                     border: tier.popular ? 'none' : '1px solid var(--border)',
                   }}
                 >

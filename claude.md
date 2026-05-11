@@ -60,7 +60,7 @@ src/
 |-------|-------|
 | Primary accent | `#FF6B35` (orange) |
 | Secondary accent | `#F5A623` (amber) |
-| Logo | CSS text gradient (purple → orange), `biz-genies-logo` class |
+| Logo | Image asset at `/public/biz-genies-logo.png`; current favicons generated from symbol at `/public/favicon-v2.ico`, `/public/favicon-v2.png`, `/public/favicon-v2-192.png`, `/public/apple-touch-icon-v2.png` |
 | Font | Inter (body), Space Grotesk (headings), Space Mono (mono) |
 | Background | `#0e0e0e` dark, `#f8f7f4` light |
 

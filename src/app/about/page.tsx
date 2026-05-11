@@ -18,7 +18,7 @@ export default function AboutPage() {
         <div className="container" style={{ maxWidth: '800px' }}>
           <h1 className="about-headline" style={{ color: 'var(--text)', textAlign: 'center' }}>
             We&apos;re{' '}
-            <span style={{ color: '#FF6B35' }}>Biz Genies</span>
+            <span style={{ color: 'var(--accent-2)' }}>Biz Genies</span>
             {' '} <br />A Marketing Team Built for the Trades
           </h1>
           <div style={{ color: 'var(--muted)', fontSize: '1.1rem', lineHeight: 1.8, display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>

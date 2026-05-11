@@ -11,6 +11,14 @@ export const metadata: Metadata = {
     siteName: 'Biz Genies',
     type: 'website',
   },
+  icons: {
+    icon: [
+      { url: '/favicon-v2.ico', sizes: 'any' },
+      { url: '/favicon-v2.png', sizes: '512x512', type: 'image/png' },
+      { url: '/favicon-v2-192.png', sizes: '192x192', type: 'image/png' },
+    ],
+    apple: [{ url: '/apple-touch-icon-v2.png', sizes: '180x180', type: 'image/png' }],
+  },
 };
 
 export default function RootLayout({
@@ -19,7 +27,24 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" data-theme="dark" data-scroll-behavior="smooth" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function () {
+                try {
+                  var storedTheme = localStorage.getItem('theme');
+                  var theme = storedTheme || 'dark';
+                  document.documentElement.setAttribute('data-theme', theme);
+                } catch (error) {
+                  document.documentElement.setAttribute('data-theme', 'dark');
+                }
+              })();
+            `,
+          }}
+        />
+      </head>
       <body>{children}</body>
     </html>
   );

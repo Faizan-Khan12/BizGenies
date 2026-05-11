@@ -85,7 +85,7 @@ export default function CtaSection() {
               borderRadius: '16px',
               overflow: 'hidden',
               border: '1px solid var(--border)',
-              boxShadow: '0 32px 80px rgba(0,0,0,.5)',
+              boxShadow: 'var(--shadow-strong)',
             }}
           >
             <Image

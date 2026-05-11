@@ -99,7 +99,7 @@ export default function ServicesPage() {
                       {/* Mini card mockup */}
                       <div style={{ position: 'relative', background: 'var(--surface-2)', border: '1px solid var(--border)', borderRadius: '10px', padding: '1.5rem', width: '100%', maxWidth: '260px', zIndex: 1 }}>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
-                          <div style={{ width: '2.5rem', height: '2.5rem', borderRadius: '50%', background: 'rgba(255,107,53,.2)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                          <div style={{ width: '2.5rem', height: '2.5rem', borderRadius: '50%', background: 'var(--badge-bg)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                             <svc.Icon size={16} color='var(--accent)' />
                           </div>
                           <div>
@@ -138,7 +138,7 @@ export default function ServicesPage() {
                       <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                         {svc.steps.map((step, si) => (
                           <div key={si} style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                            <div style={{ width: '1.5rem', height: '1.5rem', borderRadius: '50%', background: 'rgba(255,107,53,.2)', color: 'var(--accent)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '.75rem', fontWeight: 700, flexShrink: 0 }}>{si + 1}</div>
+                            <div style={{ width: '1.5rem', height: '1.5rem', borderRadius: '50%', background: 'var(--badge-bg)', color: 'var(--badge-text)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '.75rem', fontWeight: 700, flexShrink: 0 }}>{si + 1}</div>
                             <span style={{ fontSize: '.875rem', color: 'var(--text)' }}>{step}</span>
                           </div>
                         ))}

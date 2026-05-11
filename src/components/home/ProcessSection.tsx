@@ -18,7 +18,7 @@ export default function ProcessSection() {
           <div className="grid-3" style={{ position: 'relative', zIndex: 1 }}>
             {STEPS.map((step, i) => (
               <div key={i} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
-                <div style={{ width: '5rem', height: '5rem', borderRadius: '50%', background: 'var(--surface-2)', border: '4px solid var(--bg)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.75rem', fontFamily: 'Space Grotesk, sans-serif', fontWeight: 700, color: 'var(--accent)', marginBottom: '2rem', boxShadow: '0 8px 32px rgba(0,0,0,.3)' }}>
+                <div style={{ width: '5rem', height: '5rem', borderRadius: '50%', background: 'var(--surface-2)', border: '4px solid var(--bg)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.75rem', fontFamily: 'Space Grotesk, sans-serif', fontWeight: 700, color: 'var(--accent)', marginBottom: '2rem', boxShadow: 'var(--shadow-soft)' }}>
                   {step.num}
                 </div>
                 <h3 style={{ fontSize: '1.3rem', color: 'var(--text)', marginBottom: '1rem' }}>{step.title}</h3>

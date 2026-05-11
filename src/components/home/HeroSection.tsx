@@ -48,7 +48,7 @@ export default function HeroSection() {
           zIndex: 0,
           opacity: 0.25,
           backgroundImage:
-            'linear-gradient(to right, #222 1px, transparent 1px), linear-gradient(to bottom, #222 1px, transparent 1px)',
+            'linear-gradient(to right, var(--grid-line) 1px, transparent 1px), linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px)',
           backgroundSize: '40px 40px',
           transform: 'rotate(-5deg) scale(1.5)',
         }}
@@ -73,14 +73,14 @@ export default function HeroSection() {
                 padding: '.3rem .9rem',
                 marginBottom: '1.5rem',
                 borderRadius: '999px',
-                background: 'rgba(255,107,53,.1)',
-                border: '1px solid rgba(255,107,53,.2)',
+                background: 'var(--badge-bg)',
+                border: '1px solid var(--badge-border)',
               }}
             >
               <span
                 style={{
                   fontFamily: 'Space Mono, monospace',
-                  color: 'var(--accent)',
+                  color: 'var(--badge-text)',
                   fontSize: '.8rem',
                   fontWeight: 700,
                 }}
@@ -91,7 +91,7 @@ export default function HeroSection() {
 
             <h1
               className="hero-headline"
-              style={{ color: 'var(--text)', marginBottom: '1.5rem' }}
+              style={{ color: 'var(--brand-strong)', marginBottom: '1.5rem' }}
             >
               Websites &amp; Marketing Systems That Actually Get Your Phone
               Ringing
@@ -198,7 +198,7 @@ export default function HeroSection() {
                     color: 'var(--muted)',
                   }}
                 >
-                  <span style={{ color: '#F5A623' }}>★</span>
+                  <span style={{ color: 'var(--star)' }}>★</span>
                   <span>Google — 5.0</span>
                 </div>
               </div>
@@ -209,11 +209,11 @@ export default function HeroSection() {
           <div
             id="contact"
             style={{
-              background: 'var(--surface)',
-              borderTop: '4px solid var(--accent)',
+              background: 'var(--form-surface)',
+              border: '2px solid var(--accent-2)',
               borderRadius: '12px',
               padding: '2rem',
-              boxShadow: '0 24px 64px rgba(0,0,0,.4)',
+              boxShadow: 'var(--form-shadow)',
             }}
           >
             <h3
@@ -283,7 +283,7 @@ export default function HeroSection() {
                     setForm({ ...form, businessType: e.target.value })
                   }
                   style={{
-                    color: form.businessType ? 'var(--text)' : 'var(--muted)',
+                    color: form.businessType ? 'var(--input-text)' : 'var(--input-placeholder)',
                     cursor: 'pointer',
                   }}
                 >
@@ -311,7 +311,7 @@ export default function HeroSection() {
                           display: 'inline-block',
                           width: '1rem',
                           height: '1rem',
-                          border: '2px solid #fff',
+                          border: '2px solid var(--on-accent)',
                           borderTopColor: 'transparent',
                           borderRadius: '50%',
                           marginRight: '.5rem',
