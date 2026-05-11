@@ -85,7 +85,7 @@ export default function HeroSection() {
                   fontWeight: 700,
                 }}
               >
-                MIAMI&apos;S #1 LOCAL SERVICE MARKETING AGENCY
+                MARKETING SYSTEMS FOR LOCAL SERVICE BUSINESSES
               </span>
             </div>
 
@@ -186,7 +186,7 @@ export default function HeroSection() {
                     marginBottom: '.35rem',
                   }}
                 >
-                  Trusted by 200+ contractors across the US
+                  Trusted by 200+ contractors in local service trades
                 </p>
                 {/* Only Google rating */}
                 <div

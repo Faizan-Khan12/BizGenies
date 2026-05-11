@@ -5,21 +5,21 @@ import FaqSection from '@/components/home/FaqSection';
 const PRICING_TIERS = [
   {
     name: 'Starter',
-    monthly: 197,
+    price: 197,
     popular: false,
-    features: ['Functional Website (5–10 pages)', 'Missed Call Text Back', '5-Star Review Funnel', 'On-Site SEO', 'Mobile Optimized'],
-  },
-  {
-    name: 'Growth System',
-    monthly: 297,
-    popular: true,
-    features: ['Everything in Starter', 'Automated Lead Follow-Up', 'One-Click Marketing Campaigns', 'Google My Business Optimization', 'All-in-One Inbox', 'Business Phone Number'],
+    features: ['Website', 'Mobile optimized', 'Website hosting included', 'Google Business Profile setup'],
   },
   {
     name: 'Pro',
-    monthly: 497,
+    price: 497,
+    popular: true,
+    features: ['Everything in Starter', 'Missed Call Text Back', '5-Star Review Gating', 'Automated Lead Flow', 'All-in-One Inbox (Personalized App)', 'One-Click Marketing Campaigns'],
+  },
+  {
+    name: 'Custom',
+    price: "Let's Talk",
     popular: false,
-    features: ['Everything in Growth', 'Advanced SEO (backlinks, directories)', 'Google Ads Management (PPC + LSA)', 'Monthly reporting', 'Priority support'],
+    features: ['Everything in Pro', 'Custom requirements beyond Starter and Pro', 'Tailored workflows and automations', 'Custom integrations and growth support'],
   },
 ];
 
@@ -56,8 +56,10 @@ export default function PricingPage() {
                 )}
                 <h3 style={{ fontSize: '1.4rem', color: 'var(--text)', marginBottom: '.75rem' }}>{tier.name}</h3>
                 <div style={{ display: 'flex', alignItems: 'flex-end', gap: '.25rem', marginBottom: '1.5rem' }}>
-                  <span style={{ fontSize: '3rem', fontWeight: 700, fontFamily: 'Space Grotesk, sans-serif', color: 'var(--text)' }}>${tier.monthly}</span>
-                  <span style={{ color: 'var(--muted)', fontSize: '.875rem', marginBottom: '.4rem' }}>/mo</span>
+                  <span style={{ fontSize: '3rem', fontWeight: 700, fontFamily: 'Space Grotesk, sans-serif', color: 'var(--text)' }}>{typeof tier.price === 'number' ? `$${tier.price}` : tier.price}</span>
+                  {typeof tier.price === 'number' && (
+                    <span style={{ color: 'var(--muted)', fontSize: '.875rem', marginBottom: '.4rem' }}>/mo</span>
+                  )}
                 </div>
                 <div style={{ height: '1px', background: 'var(--border)', marginBottom: '1.5rem' }} />
                 <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '1rem', marginBottom: '2rem', flex: 1 }}>

@@ -9,26 +9,16 @@ const QUICK_LINKS = [
   { label: 'Privacy Policy', href: '/privacy-policy' },
 ];
 
-const SERVICE_AREAS = [
-  'Miami, FL',
-  'Fort Lauderdale, FL',
-  'West Palm Beach, FL',
-  'Orlando, FL',
-  'Tampa, FL',
-  'Jacksonville, FL',
-];
-
 export default function Footer() {
   return (
     <footer style={{ background: 'var(--surface-2)', paddingTop: '5rem', paddingBottom: '2.5rem', borderTop: '1px solid var(--border)' }}>
       <div className="container">
-        <div className="grid-3" style={{ marginBottom: '4rem' }}>
+        <div className="grid-2" style={{ marginBottom: '4rem' }}>
           {/* Branding col */}
           <div>
             <Link href="/" style={{ display: 'inline-block', marginBottom: '1.5rem' }}>
               <span className="biz-genies-logo biz-genies-logo--lg" />
             </Link>
-            <p style={{ color: 'var(--muted)', marginBottom: '1.5rem' }}>Miami, FL</p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginBottom: '2rem' }}>
               <a href="#" style={{ display: 'flex', alignItems: 'center', gap: '.75rem', color: 'var(--text)', transition: 'color .2s' }}>
                 <span style={{ color: 'var(--accent)' }}>📞</span> (305) 600-5727
@@ -55,15 +45,6 @@ export default function Footer() {
                   <Link href={href} style={{ color: 'var(--muted)', transition: 'color .2s' }}>{label}</Link>
                 </li>
               ))}
-            </ul>
-          </div>
-
-          {/* Service areas */}
-          <div>
-            <h4 style={{ fontWeight: 700, marginBottom: '1.5rem', color: 'var(--text)' }}>Service Areas</h4>
-            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '.75rem', color: 'var(--muted)' }}>
-              {SERVICE_AREAS.map((area) => <li key={area}>{area}</li>)}
-              <li style={{ color: 'var(--accent)', marginTop: '.5rem' }}>+ Nationwide</li>
             </ul>
           </div>
         </div>

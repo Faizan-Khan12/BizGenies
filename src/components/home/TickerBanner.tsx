@@ -2,7 +2,7 @@ const STATS = [
   '200+ Active Clients',
   '7–10 Day Builds',
   '5-Star Rated on Google',
-  'Miami-Based Team',
+  'Built for Local Service Businesses',
   'No Long-Term Contracts',
   'Results in 30 Days or Less',
 ];

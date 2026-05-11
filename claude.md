@@ -7,7 +7,7 @@
 ## Project Overview
 
 **Name:** Biz Genies  
-**Type:** Next.js 15 (App Router) marketing website  
+**Type:** Next.js 16 (App Router) marketing website  
 **Stack:** Next.js · TypeScript · Vanilla CSS (no Tailwind) · React  
 **Path:** `/Users/faizankhan/Documents/Projects/xcendlabs-next`  
 **Repo:** `https://github.com/Faizan-Khan12/BizGenies.git`  
@@ -38,16 +38,16 @@ src/
 │
 └── components/
     ├── Navbar.tsx              # Client component — mobile drawer + mega menu
-    ├── Footer.tsx              # Server component — links + contact
+    ├── Footer.tsx              # Server component — branding/contact + quick links
     ├── SiteLayout.tsx          # Wrapper: Navbar + children + Footer
     └── home/
         ├── HeroSection.tsx     # Hero + lead capture form (client)
         ├── TickerBanner.tsx    # Scrolling stats ticker
         ├── ServicesSection.tsx # 6-card services grid + SERVICES_DATA export
-        ├── TradesTicker.tsx    # 2-row scrolling trades tickers
+        ├── TradesTicker.tsx    # 2-row scrolling trades tickers with Lucide icons
         ├── ProcessSection.tsx  # 3-step process
         ├── ReviewsSection.tsx  # Scrolling reviews + REVIEWS_DATA export
-        ├── WhyUsSection.tsx    # 6-card why-us grid
+        ├── WhyUsSection.tsx    # 6-card why-us grid with Lucide icons
         ├── FaqSection.tsx      # Accordion FAQ (client)
         └── CtaSection.tsx      # Final CTA block
 ```
@@ -68,22 +68,22 @@ src/
 
 ## Key Content
 
-### Team (About page)
-1. Stephen Avis — Founder & Strategist
-2. Faizan Khan — Automation Engineer
+### Positioning
+- Location-neutral marketing systems for local service businesses
+- Do not position Biz Genies as Miami-only; the agency location remains Miami, FL on the Contact page only
 
 ### Services
 `website` · `text-back` · `reviews` · `follow-up` · `campaigns` · `seo` · `ads` · `inbox`
 
 ### Pricing
-- Starter: $197/mo
-- Growth System: $297/mo (most popular)
-- Pro: $497/mo
+- Starter: $197/mo — website, mobile optimization, hosting, Google Business Profile setup
+- Pro: $497/mo (most popular) — Starter plus missed call text back, review gating, automated lead flow, personalized all-in-one inbox, one-click campaigns
+- Custom — custom requirements beyond Starter and Pro
 
 ### Contact
 - Phone: (305) 600-5727
 - Email: hello@bizgenies.com
-- Location: Miami, FL (Nationwide)
+- Agency location: Miami, FL
 
 ---
 
